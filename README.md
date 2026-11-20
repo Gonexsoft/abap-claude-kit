@@ -73,7 +73,12 @@ Yoksa bu adımları Claude ajanları yapar. Kaynak kodu gidebilecek sistemler
 - Transport release, obje silme ve ATC exemption her zaman kullanıcıda.
 - SAP token'ı sadece yerel `.mcp.json`'da durur, git'e girmez.
 
-## Üçüncü taraf bileşenler
+## Lisans
+
+[MIT](LICENSE). Serbestçe kullanılabilir, değiştirilebilir ve dağıtılabilir; telif satırı
+korunur. Garanti verilmez: SAP sistemine yazan her adım kendi sorumluluğunuzdadır.
+
+Üçüncü taraf bileşenler kendi lisanslarıyla:
 
 - `sap-transport-code-review`: Leo Trinh, Apache-2.0 (`LICENSE`), bu ortama uyarlandı.
 - `clean-core-successors`: github.com/KorhanKara/abap-clean-core-successors, MIT (`LICENSE-upstream`).
