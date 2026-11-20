@@ -1,0 +1,103 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__sap-adt__abap_destination_list",
+      "mcp__sap-adt__abap_repository_search_object",
+      "mcp__sap-adt__abap_object_read_file",
+      "mcp__sap-adt__abap_object_list_file_uris",
+      "mcp__sap-adt__abap_object_get_file_uri",
+      "mcp__sap-adt__abap_object_get_document_symbols",
+      "mcp__sap-adt__abap_object_get_aff_specification",
+      "mcp__sap-adt__abap_object_check",
+      "mcp__sap-adt__abap_object_list_actions",
+      "mcp__sap-adt__abap_repository_list_creatable_types",
+      "mcp__sap-adt__abap_object_get_creatable_type_detail",
+      "mcp__sap-adt__abap_object_validate_creation",
+      "mcp__sap-adt__abap_objects_generator_list",
+      "mcp__sap-adt__abap_objects_generator_get_schema",
+      "mcp__sap-adt__abap_business_service_list",
+      "mcp__sap-adt__abap_business_service_get_info",
+      "mcp__sap-adt__abap_transport_get_request",
+      "mcp__sap-adt__abap_transport_get_unified_diff",
+      "mcp__sap-adt__abap_atc_run_start",
+      "mcp__sap-adt__abap_atc_run_get_result",
+      "mcp__sap-adt__abap_unit_run_tests",
+      "mcp__sap-adt__abap_feed_get_schema",
+      "mcp__sap-adt__abap_feed_query",
+      "Bash(powershell -NoProfile -ExecutionPolicy Bypass -File .claude/scripts/gemini-ask.ps1:*)",
+      "Write(objects/**)",
+      "Edit(objects/**)",
+      "Write(specs/**)",
+      "Edit(specs/**)",
+      "Bash(python -I .claude/skills/clean-core-successors/scripts/lookup.py:*)",
+      "mcp__sap-adt__abap_object_edit_file",
+      "mcp__sap-adt__abap_object_create",
+      "mcp__sap-adt__abap_object_activate",
+      "Bash(python -I .claude/skills/sap-transport-code-review/scripts/fetch_source.py:*)",
+      "Bash(python -I .claude/scripts/doc-to-text.py:*)"
+    ],
+    "deny": [
+      "mcp__sap-adt__abap_atc_exemption_request",
+      "mcp__sap-adt__abap_atc_ai_start_fix"
+    ],
+    "ask": [
+      "mcp__sap-adt__abap_transport_create_request",
+      "mcp__sap-adt__abap_objects_generator_run",
+      "mcp__sap-adt__abap_atc_quickfixes_apply",
+      "mcp__sap-adt__abap_object_run_action",
+      "Edit(.claude/hooks/systems.json)",
+      "Write(.claude/hooks/systems.json)",
+      "Edit(.claude/hooks/sap-write-guard.ps1)",
+      "Write(.claude/hooks/sap-write-guard.ps1)",
+      "Edit(.claude/scripts/gemini-*)",
+      "Write(.claude/scripts/gemini-*)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -I \"C:/KURULUM-ILE-DUZELTILIR/ABAP/.claude/hooks/session-check.py\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -I \"C:/KURULUM-ILE-DUZELTILIR/ABAP/.claude/hooks/session-title.py\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "mcp__sap-adt__abap_object_activate",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -I \"C:/KURULUM-ILE-DUZELTILIR/ABAP/.claude/hooks/post-activate-check.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "mcp__sap-adt__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:/KURULUM-ILE-DUZELTILIR/ABAP/.claude/hooks/sap-write-guard.ps1\""
+          }
+        ]
+      }
+    ]
+  }
+}

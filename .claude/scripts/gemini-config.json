@@ -1,0 +1,13 @@
+{
+  "_aciklama": "gemini-ask.ps1 ayarlari. allowedSystems: kaynak kodu Gemini'ye (Google AI Pro hesabi) gidebilecek SID'ler; listede olmayan sistemde gemini-ask GEMINI_FAIL doner ve is Claude ajanina (yedek) kalir. Varsayilan bos; musteri sistemi eklemek musteri onayi ister. models: moda gore varsayilan model (agy models listesinden).",
+  "agy": "%USERPROFILE%\\.gemini\\bin\\agy.exe",
+  "allowedSystems": [],
+  "models": {
+    "explore": "gemini-3.8-flash-high",
+    "impact": "gemini-3.8-flash-high",
+    "arch": "gemini-4-argon-high",
+    "review": "gemini-4-argon-high",
+    "jira": "gemini-4-argon-medium",
+    "doc": "gemini-4-argon-high"
+  }
+}

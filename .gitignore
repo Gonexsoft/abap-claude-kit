@@ -1,0 +1,9 @@
+.claude/settings.local.json
+.claude/hooks/*.log
+specs/**/scan/
+__pycache__/
+# Antigravity: tools/sync-antigravity.ps1 ile .claude kaynagindan uretilir (makineye ozel yol icerir)
+.agents/
+AGENTS.md
+dist/
+.mcp.json

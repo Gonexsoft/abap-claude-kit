@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp(sap-adt/abap_destination_list)",
+      "mcp(sap-adt/abap_repository_search_object)",
+      "mcp(sap-adt/abap_object_read_file)",
+      "mcp(sap-adt/abap_object_list_file_uris)",
+      "mcp(sap-adt/abap_object_get_file_uri)",
+      "mcp(sap-adt/abap_object_get_document_symbols)",
+      "mcp(sap-adt/abap_object_get_aff_specification)",
+      "mcp(sap-adt/abap_business_service_list)",
+      "mcp(sap-adt/abap_business_service_get_info)",
+      "mcp(sap-adt/abap_feed_get_schema)",
+      "mcp(sap-adt/abap_feed_query)",
+      "mcp(sap-adt/abap_transport_get_request)",
+      "mcp(sap-adt/abap_transport_get_unified_diff)"
+    ]
+  }
+}
